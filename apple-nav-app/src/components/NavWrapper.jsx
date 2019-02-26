@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import '../App.css';
 
-// import Icon from './Icon';
-// import NavbarLink from './NavbarLink';
+import Mac from './screens/Mac';
 const StyledNavContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-color: #313131;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const StyledNavBar = styled.div`
-  width: 80vw;
+  width: 100vw;
   height: 50px;
   background-color: #313131;
   color: white;
@@ -33,6 +33,13 @@ const StyledNavBar = styled.div`
     }
   }
 `;
+
+const StyledSubNav = styled.div`
+  background-color: white;
+  color: black;
+  display: flex;
+`;
+
 export default function NavWrapper() {
   return (
     <StyledNavContainer>
@@ -68,6 +75,9 @@ export default function NavWrapper() {
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/VisualEditor_-_Icon_-_Close_-_white.svg/2000px-VisualEditor_-_Icon_-_Close_-_white.svg.png" alt="Shop Icon" />
         </NavLink>
       </StyledNavBar>
+      <StyledSubNav>
+        <Route path="/mac" render={pr => <Mac {...pr} />} />
+      </StyledSubNav>
     </StyledNavContainer>
   );
 }
