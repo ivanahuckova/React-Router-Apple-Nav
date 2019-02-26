@@ -8,14 +8,14 @@ const StyledSubNav = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   width: 100vw;
-  padding: 20px 17vw;
+  padding: 20px 20vw;
 `;
 
-export default function Mac(props) {
-  const macData = data.Mac;
+export default function Ipad(props) {
+  const ipadData = data.iPad;
   return (
     <StyledSubNav>
-      {macData.map(data => (
+      {ipadData.map(data => (
         <SubNav key={data.name} specs={data.specs} imgLink={data.imgLink} imgName={data.name} name={data.name} new={data.new} />
       ))}
     </StyledSubNav>
