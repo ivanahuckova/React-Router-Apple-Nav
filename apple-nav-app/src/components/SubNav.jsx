@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledSubLink = styled.div`
+const StyledSubNav = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
   cursor: pointer;
+  padding: 10px 20vw;
+  background-color: #f6f6f6;
 
   img {
     height: 50px;
@@ -33,12 +35,18 @@ const StyledSubLink = styled.div`
 `;
 
 export default function SubLinks(props) {
+  const productType = props.match.params.productType;
+
   return (
-    <StyledSubLink>
-      <img src={props.imgLink} alt={props.name} />
-      <div className="category-name">{props.name}</div>
-      {props.specs && <div className="specs">{props.specs}</div>}
-      {props.new && <div className="red">New</div>}
-    </StyledSubLink>
+    <StyledSubNav>
+      {props.data[productType].map(data => (
+        <div>
+          <img src={data.imgLink} alt={data.name} />
+          <div className="category-name">{data.name}</div>
+          {data.specs && <div className="specs">{data.specs}</div>}
+          {data.new && <div className="red">New</div>}
+        </div>
+      ))}
+    </StyledSubNav>
   );
 }

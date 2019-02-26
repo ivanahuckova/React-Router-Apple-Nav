@@ -1,5 +1,5 @@
 const data = {
-  Mac: [
+  mac: [
     {
       imgLink: 'https://www.apple.com/v/mac/home/ae/images/familybrowser/macbook__fjd32xo0xwmm_large.svg',
       name: 'MacBook',
@@ -38,6 +38,12 @@ const data = {
       new: false
     },
     {
+      imgLink: 'https://www.apple.com/v/mac/home/ae/images/familybrowser/macmini__rzlk7b0xsmqq_large.svg',
+      name: 'Mac mini',
+      specs: null,
+      new: true
+    },
+    {
       imgLink: 'https://www.apple.com/v/mac/home/ae/images/familybrowser/mac_acc__fia3ihqup4ae_large.svg',
       name: 'Accessories',
       specs: null,
@@ -57,7 +63,7 @@ const data = {
       new: false
     }
   ],
-  iPad: [
+  ipad: [
     {
       imgLink: 'https://www.apple.com/v/ipad/home/an/images/chapternav/ipadpro_light__fic9xqb4rq62_large.svg',
       name: 'iPad Pro',

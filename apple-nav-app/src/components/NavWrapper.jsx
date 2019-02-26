@@ -1,21 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink, Route } from 'react-router-dom';
-import '../App.css';
+import { NavLink } from 'react-router-dom';
 
 import shopIcon from '../icons/shop-icon.svg';
 import searchIcon from '../icons/search-icon.svg';
 import appleIcon from '../icons/apple-icon.svg';
-
-import Mac from './screens/Mac';
-import Ipad from './screens/Ipad';
 
 const StyledNavContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 `;
 
 const StyledNavBar = styled.div`
@@ -30,6 +25,10 @@ const StyledNavBar = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
+  .active-link {
+    color: darkgray;
+  }
+
   img {
     height: 25px;
   }
@@ -41,13 +40,6 @@ const StyledNavBar = styled.div`
       color: darkgray;
     }
   }
-`;
-
-const StyledSubNav = styled.div`
-  background-color: #f6f6f6;
-  color: black;
-  display: flex;
-  width: 100vw;
 `;
 
 export default function NavWrapper() {
@@ -85,10 +77,6 @@ export default function NavWrapper() {
           <img src={shopIcon} alt="Shop Icon" />
         </NavLink>
       </StyledNavBar>
-      <StyledSubNav>
-        <Route exact path="/mac" render={pr => <Mac {...pr} />} />
-        <Route exact path="/ipad" render={pr => <Ipad {...pr} />} />
-      </StyledSubNav>
     </StyledNavContainer>
   );
 }
